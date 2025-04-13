@@ -1,5 +1,6 @@
 import './App.css';
 import Home from './components/Home';
+import ProductsPage from './components/Products';
 import Footer from './components/layouts/Footer';
 import Header from './components/layouts/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
@@ -59,6 +60,7 @@ function App() {
                   <ToastContainer theme='dark' />
                   <Routes>
                       <Route path='/' element={<Home/>} />
+                      <Route path='/productspage' element={<ProductsPage/>} />
                       <Route path='/search/:keyword' element={<ProductSearch/>} />
                       <Route path='/product/:id' element={<ProductDetail/>} />
                       <Route path='/login' element={<Login/>} />
