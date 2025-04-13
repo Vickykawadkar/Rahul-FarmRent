@@ -34,7 +34,8 @@ export  default function ProductSearch(){
         'Beauty/Health',
         'Sports',
         'Outdoor',
-        'Home'
+        'Home',
+        "tractor"
     ];
  
     const setCurrentPageNo = (pageNo) =>{

@@ -32,7 +32,8 @@ export default function UpdateProduct () {
         'Beauty/Health',
         'Sports',
         'Outdoor',
-        'Home'
+        'Home',
+        "tractor"
     ];
 
     const navigate = useNavigate();
