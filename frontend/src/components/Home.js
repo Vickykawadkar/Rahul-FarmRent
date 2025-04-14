@@ -253,23 +253,148 @@ export default function Home() {
   </div>
 </section>
           {/* About Us Section */}
-          <section className="container text-center py-5">
-            <h2>About KrishiRent</h2>
-            <p className="mt-3 px-5">
-              KrishiRent is a modern agriculture solution platform that empowers farmers by giving
-              them access to the latest farming equipment without huge investments. We believe in
-              innovation, reliability, and supporting the backbone of our country—our farmers.
-            </p>
-          </section>
+          <section
+  className="container text-center py-5 mt-5"
+  style={{
+    border: "2px solid black",
+    borderRadius: "10px",
+    backgroundColor: "#f8f9fa",
+  }}
+>
+  <motion.h2
+    style={{
+      fontWeight: "800",
+      fontSize: "3rem",
+      fontFamily: '"Poppins", sans-serif',
+      color: "#232f3e",
+      textTransform: "uppercase",
+      letterSpacing: "1px",
+    }}
+    initial={{ opacity: 0, y: -40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+  >
+    About KrishiRent
+  </motion.h2>
+
+  <motion.p
+    className="mt-4 px-5"
+    style={{
+      fontSize: "1.2rem",
+      fontWeight: "500",
+      color: "#444",
+      fontFamily: '"Poppins", sans-serif',
+      lineHeight: "1.7",
+    }}
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1, delay: 0.3 }}
+  >
+    “KrishiRent is a modern agriculture solution platform that empowers farmers by giving
+    them access to the latest farming equipment without huge investments. We believe in
+    innovation, reliability, and supporting the backbone of our country—our farmers.”
+  </motion.p>
+</section>
 
           {/* Contact Section */}
-          <section className="bg-dark text-white py-4">
-            <div className="container text-center">
-              <h4>Contact Us</h4>
-              <p>Email: support@krishirent.com | Phone: +91-9876543210</p>
-              <p>Location: AgriTech Hub, Pune, India</p>
-            </div>
-          </section>
+          
+
+<section
+  className="bg-dark text-white py-5 mt-5"
+  style={{
+    backgroundColor: "#232f3e", // Dark background
+    borderTop: "2px solid black", // Border for the top edge
+    borderRadius: "10px",
+  }}
+>
+  <div className="container text-center">
+    {/* Header Section with Border and Animation */}
+    <motion.h4
+      style={{
+        fontWeight: "700",
+        fontSize: "2.5rem",
+        fontFamily: '"Poppins", sans-serif',
+        letterSpacing: "1px",
+        display: "inline-block",
+        padding: "10px 20px",
+        border: "2px solid white", // Border for the header
+        borderRadius: "5px",
+        marginBottom: "30px", // Adding margin for spacing
+        textTransform: "uppercase",
+      }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, type: "spring", bounce: 0.3 }}
+    >
+      Contact Us
+    </motion.h4>
+
+    {/* Contact Information with Animated Text */}
+    <motion.p
+      style={{
+        fontSize: "1.1rem",
+        fontWeight: "500",
+        marginTop: "20px",
+        color: "#e0e0e0", // Light gray for better readability
+      }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.3 }}
+    >
+      Email:{" "}
+      <motion.span
+        style={{
+          color: "#ff8c00", // Highlight the email with a distinct color
+          fontWeight: "600",
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        support@krishirent.com
+      </motion.span>
+    </motion.p>
+
+    <motion.p
+      style={{
+        fontSize: "1.1rem",
+        fontWeight: "500",
+        marginTop: "10px",
+        color: "#e0e0e0", // Light gray for readability
+      }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.6 }}
+    >
+      Phone:{" "}
+      <motion.span
+        style={{
+          color: "#ff8c00", // Highlight the phone number with a distinct color
+          fontWeight: "600",
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.7 }}
+      >
+        +91-9876543210
+      </motion.span>
+    </motion.p>
+
+    <motion.p
+      style={{
+        fontSize: "1.1rem",
+        fontWeight: "500",
+        marginTop: "10px",
+        color: "#e0e0e0", // Light gray for readability
+      }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.9 }}
+    >
+      Location: AgriTech Hub, Pune, India
+    </motion.p>
+  </div>
+</section>
 
           {/* Pagination */}
           {productsCount > 0 && productsCount > resPerPage && (
