@@ -21,7 +21,7 @@ export default function Header() {
       <div className="col-12 col-md-5 d-flex align-items-center">
         <div className="navbar-brand mr-4">
           <Link to="/">
-            <img width="130px" alt="Logo" src="/images/logo4.png" />
+            <img width="130px" alt="Logo" src="/images/logo6.png" />
           </Link>
         </div>
 
