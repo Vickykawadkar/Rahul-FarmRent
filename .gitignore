@@ -20,5 +20,3 @@ logs
 Thumbs.db
 ehthumbs.db
 
-# Custom: Ignore environment config
-backend/config/config.env
