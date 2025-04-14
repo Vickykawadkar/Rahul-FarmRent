@@ -16,7 +16,7 @@ export default function Header() {
   };
 
   return (
-    <nav className="navbar row align-items-center px-3">
+    <nav className="navbar row align-items-center px-3" style={{ backgroundColor: '#232f3e' }}>
       {/* Left: Logo + Nav Links */}
       <div className="col-12 col-md-5 d-flex align-items-center">
         <div className="navbar-brand mr-4">
@@ -26,20 +26,29 @@ export default function Header() {
         </div>
 
         <ul className="navbar-nav d-flex flex-row ml-2">
-  <li className="nav-item mx-2">
-    <Link className="nav-link p-0" to="/" style={{ color: '#ffffff' }}>HOME</Link>
-  </li>
-  <li className="nav-item mx-2">
-    <Link className="nav-link p-0" to="/productspage" style={{ color: '#ffffff' }}>PRODUCTS</Link>
-  </li>
-  <li className="nav-item mx-2">
-    <Link className="nav-link p-0" to="/contact" style={{ color: '#ffffff' }}>CONTACT</Link>
-  </li>
-  <li className="nav-item mx-2">
-    <Link className="nav-link p-0" to="/about" style={{ color: '#ffffff' }}>ABOUT</Link>
-  </li>
-</ul>
-
+          {[
+            { to: '/', label: 'HOME' },
+            { to: '/productspage', label: 'PRODUCTS' },
+            { to: '/contact', label: 'CONTACT' },
+            { to: '/about', label: 'ABOUT' },
+          ].map((link, idx) => (
+            <li className="nav-item mx-2" key={idx}>
+              <Link
+                className="nav-link nav-animate-link p-0"
+                to={link.to}
+                style={{
+                  color: '#ffffff',
+                  fontWeight: '600',
+                  position: 'relative',
+                  paddingBottom: '4px',
+                  transition: 'color 0.3s ease',
+                }}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Middle: Search */}
@@ -81,10 +90,32 @@ export default function Header() {
         )}
 
         <Link to="/cart">
-          <span id="cart" className="ml-3">Cart</span>
+          <span id="cart" className="ml-3 text-white">Cart</span>
         </Link>
-        <span className="ml-1" id="cart_count">{cartItems.length}</span>
+        <span className="ml-1 text-white" id="cart_count">{cartItems.length}</span>
       </div>
+
+      {/* Custom Style for Animation */}
+      <style>{`
+        .nav-animate-link::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 2px;
+          width: 0;
+          background-color: #f3b700;
+          transition: width 0.3s ease;
+        }
+
+        .nav-animate-link:hover::after {
+          width: 100%;
+        }
+
+        .nav-animate-link:hover {
+          color: #f3b700 !important;
+        }
+      `}</style>
     </nav>
   );
 }

@@ -140,40 +140,118 @@ export default function Home() {
   </section>
           {/* Featured Products */}
           <section className="container mt-5">
-            <h1 className="text-center mb-4">FEATURED PRODUCTS</h1>
-            <div className="row">
-              {featuredProducts.map((product) => (
-                <Product col={4} key={product._id} product={product} />
-              ))}
-            </div>
-          </section>
+  <motion.h1
+    className="text-center mb-4"
+    style={{
+      fontWeight: '800',
+      fontSize: '2.5rem',
+      fontFamily: '"Poppins", sans-serif',
+      position: 'relative',
+      display: 'inline-block',
+      color: '#232f3e',
+    }}
+    initial={{ opacity: 0, y: -30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+  >
+    FEATURED PRODUCTS
+    <motion.div
+      initial={{ scaleX: 0 }}
+      animate={{ scaleX: 1 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      style={{
+        height: '4px',
+        backgroundColor: '#232f3e',
+        position: 'absolute',
+        bottom: '-8px',
+        left: 0,
+        right: 0,
+        transformOrigin: 'left',
+      }}
+    />
+  </motion.h1>
 
+  <div className="row mt-3">
+    {featuredProducts.map((product) => (
+      <Product col={4} key={product._id} product={product} />
+    ))}
+  </div>
+</section>
 
         
           {/* Services Section */}
-          <section className="bg-light py-5 mt-5">
-            <div className="container text-center">
-              <h2>Our Services</h2>
-              <div className="row mt-4">
-                <div className="col-md-4">
-                  <i className="fas fa-tractor fa-3x mb-3"></i>
-                  <h5>Tractor Rental</h5>
-                  <p>Well-maintained tractors from top brands available on hourly rental basis.</p>
-                </div>
-                <div className="col-md-4">
-                  <i className="fas fa-tools fa-3x mb-3"></i>
-                  <h5>Equipment Service</h5>
-                  <p>Each equipment is quality checked and serviced for maximum performance.</p>
-                </div>
-                <div className="col-md-4">
-                  <i className="fas fa-headset fa-3x mb-3"></i>
-                  <h5>24/7 Support</h5>
-                  <p>Our team is available round the clock to help you with bookings and inquiries.</p>
-                </div>
-              </div>
-            </div>
-          </section>
+          <section
+  className="py-5 mt-5"
+  style={{
+    backgroundColor: '#f8f9fa',
+    border: '2px solid black',
+    borderRadius: '10px',
+  }}
+>
+  <div className="container text-center">
+    <motion.h2
+      style={{
+        fontWeight: '800',
+        fontFamily: '"Poppins", sans-serif',
+        fontSize: '3rem',
+        color: '#232f3e',
+        letterSpacing: '1px',
+        textTransform: 'uppercase',
+      }}
+      initial={{ opacity: 0, scale: 0.8, y: -50 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 1, type: 'spring', bounce: 0.4 }}
+    >
+      Our Services
+    </motion.h2>
 
+    <div className="row mt-4">
+      {[
+        {
+          icon: 'fas fa-tractor',
+          title: 'Tractor Rental',
+          desc: 'Well-maintained tractors from top brands available on hourly rental basis.',
+        },
+        {
+          icon: 'fas fa-tools',
+          title: 'Equipment Service',
+          desc: 'Each equipment is quality checked and serviced for maximum performance.',
+        },
+        {
+          icon: 'fas fa-headset',
+          title: '24/7 Support',
+          desc: 'Our team is available round the clock to help you with bookings and inquiries.',
+        },
+      ].map((service, idx) => (
+        <motion.div
+          className="col-md-4"
+          key={idx}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: idx * 0.3 }}
+        >
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="p-4 mb-4"
+            style={{
+              border: '2px solid black',
+              borderRadius: '10px',
+              backgroundColor: '#ffffff',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+              height: '100%',
+            }}
+          >
+            <i className={`${service.icon} fa-3x mb-3`} style={{ color: '#232f3e' }}></i>
+            <h5 style={{ fontWeight: '600', fontFamily: '"Poppins", sans-serif' }}>
+              {service.title}
+            </h5>
+            <p style={{ color: '#555', fontSize: '1rem' }}>{service.desc}</p>
+          </motion.div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
           {/* About Us Section */}
           <section className="container text-center py-5">
             <h2>About KrishiRent</h2>
