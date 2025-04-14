@@ -21,24 +21,25 @@ export default function Header() {
       <div className="col-12 col-md-5 d-flex align-items-center">
         <div className="navbar-brand mr-4">
           <Link to="/">
-            <img width="130px" alt="Logo" src="/images/logo2.png" />
+            <img width="130px" alt="Logo" src="/images/logo4.png" />
           </Link>
         </div>
 
         <ul className="navbar-nav d-flex flex-row ml-2">
-          <li className="nav-item mx-2">
-            <Link className="nav-link p-0" to="/">Home</Link>
-          </li>
-          <li className="nav-item mx-2">
-            <Link className="nav-link p-0" to="/productspage">Products</Link>
-          </li>
-          <li className="nav-item mx-2">
-            <Link className="nav-link p-0" to="/contact">Contact</Link>
-          </li>
-          <li className="nav-item mx-2">
-            <Link className="nav-link p-0" to="/about">About</Link>
-          </li>
-        </ul>
+  <li className="nav-item mx-2">
+    <Link className="nav-link p-0" to="/" style={{ color: '#ffffff' }}>HOME</Link>
+  </li>
+  <li className="nav-item mx-2">
+    <Link className="nav-link p-0" to="/productspage" style={{ color: '#ffffff' }}>PRODUCTS</Link>
+  </li>
+  <li className="nav-item mx-2">
+    <Link className="nav-link p-0" to="/contact" style={{ color: '#ffffff' }}>CONTACT</Link>
+  </li>
+  <li className="nav-item mx-2">
+    <Link className="nav-link p-0" to="/about" style={{ color: '#ffffff' }}>ABOUT</Link>
+  </li>
+</ul>
+
       </div>
 
       {/* Middle: Search */}
