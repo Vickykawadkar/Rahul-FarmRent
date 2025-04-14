@@ -402,22 +402,8 @@ export default function Home() {
   </div>
 </section>
 
-          {/* Pagination */}
-          {productsCount > 0 && productsCount > resPerPage && (
-            <div className="d-flex justify-content-center mt-5">
-              <Pagination
-                activePage={currentPage}
-                onChange={setCurrentPageNo}
-                totalItemsCount={productsCount}
-                itemsCountPerPage={resPerPage}
-                nextPageText={"Next"}
-                firstPageText={"First"}
-                lastPageText={"Last"}
-                itemClass={"page-item"}
-                linkClass={"page-link"}
-              />
-            </div>
-          )}
+       
+          
         </Fragment>
       )}
     </Fragment>
