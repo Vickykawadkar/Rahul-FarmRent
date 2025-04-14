@@ -41,103 +41,109 @@ export default function Home() {
 
 {/* Hero Section */}
 
-
-<section
-    className="hero-section text-center p-5"
+<motion.section
+  className="hero-section text-center p-5"
+  initial={{ boxShadow: '0 0 0 rgba(0,0,0,0)' }}
+  animate={{ boxShadow: '0 8px 20px rgba(0, 0, 0, 0.1)' }}
+  transition={{ duration: 1.5, ease: 'easeOut' }}
+  style={{
+    marginTop: '80px',
+    backgroundColor: '#ffffff',
+    color: '#ffffff',
+    minHeight: '40vh',
+    position: 'relative',
+    overflow: 'hidden',
+    width: '100%',
+    border: '2px solid #000000', // Border width reduced
+    borderRadius: '12px',
+  }}
+>
+  {/* Background Overlay */}
+  <div
     style={{
-      backgroundColor: '#232f3e',
-      color: '#ffffff',
-      minHeight: '40vh', // Set the section height to 40vh
-      position: 'relative',
-      overflow: 'hidden',
-      width: '100%', // Full width
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'rgba(0, 0, 0, 0.1)',
+      zIndex: 1,
     }}
-  >
-    {/* Background Overlay */}
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: 'rgba(0, 0, 0, 0.4)', // Darker overlay for readability
-        zIndex: 1,
-      }}
-    ></div>
+  ></div>
 
-    {/* Hero Content */}
-    <motion.div
-      className="hero-content position-relative z-index-2"
+  {/* Hero Content */}
+  <motion.div
+    className="hero-content position-relative z-index-2"
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    style={{ zIndex: 2 }}
+  >
+    <motion.h1
+      className="display-3 fw-bold"
+      style={{
+        fontSize: '4.5rem',
+        letterSpacing: '-1px',
+        fontFamily: '"Poppins", sans-serif',
+        fontWeight: '700',
+        color: '#232f3e',
+      }}
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      style={{ zIndex: 2 }} // Ensure the content is in the foreground
     >
-      <motion.h1
-        className="display-3 fw-bold"
+      Welcome to <span style={{ color: '#f0590e', fontWeight: '700' }}>KrishiRent</span>
+    </motion.h1>
+
+    <motion.p
+      className="lead mt-3"
+      style={{
+        fontSize: '1.3rem',
+        fontWeight: '300',
+        fontFamily: '"Roboto", sans-serif',
+        color: '#232f3e',
+      }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.5 }}
+    >
+      Your trusted partner for affordable and reliable agricultural equipment rentals.
+    </motion.p>
+
+    <motion.div
+      className="mt-5"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, delay: 1 }}
+    >
+      <motion.a
+        href="/productspage"
+        className="btn btn-warning btn-lg px-5 py-3 shadow"
         style={{
-          fontSize: '4.5rem', // Larger font size for better impact
-          letterSpacing: '-1px',
+          fontWeight: '600',
+          textTransform: 'uppercase',
+          letterSpacing: '1px',
+          borderRadius: '50px',
+          padding: '15px 30px',
+          fontSize: '1.1rem',
           fontFamily: '"Poppins", sans-serif',
-          fontWeight: '700',
-          color: '#ffffff', // Bright text color for contrast
         }}
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        Welcome to <span style={{ color: '#f3b700', fontWeight: '700' }}>KrishiRent</span>
-      </motion.h1>
-
-      <motion.p
-        className="lead mt-3"
-        style={{
-          fontSize: '1.3rem',
-          fontWeight: '300',
-          fontFamily: '"Roboto", sans-serif',
-          color: '#ffffff', // Bright text color for contrast
+        whileHover={{
+          scale: 1.1,
+          backgroundColor: '#f3b700',
+          transition: { duration: 0.3 },
         }}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
+        whileTap={{
+          scale: 0.95,
+          transition: { duration: 0.1 },
+        }}
       >
-        Your trusted partner for affordable and reliable agricultural equipment rentals.
-      </motion.p>
-
-      <motion.div
-        className="mt-5"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-      >
-        <motion.a
-          href="/productspage"
-          className="btn btn-warning btn-lg px-5 py-3 shadow"
-          style={{
-            fontWeight: '600',
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-            borderRadius: '50px',
-            padding: '15px 30px',
-            fontSize: '1.1rem',
-            fontFamily: '"Poppins", sans-serif',
-          }}
-          whileHover={{
-            scale: 1.1,
-            backgroundColor: '#f3b700', // Slightly deeper yellow
-            transition: { duration: 0.3 },
-          }}
-          whileTap={{
-            scale: 0.95,
-            transition: { duration: 0.1 },
-          }}
-        >
-          Explore Products
-        </motion.a>
-      </motion.div>
+        Explore Products
+      </motion.a>
     </motion.div>
-  </section>
+  </motion.div>
+</motion.section>
+
           {/* Featured Products */}
           <section className="container mt-5">
   <motion.h1
