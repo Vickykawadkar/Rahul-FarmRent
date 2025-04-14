@@ -1,7 +1,7 @@
 const app = require('./app');
 const path = require('path');
 const connectDatabase = require('./config/database');
-const express = require('express');
+
 
 connectDatabase();
 
@@ -9,13 +9,13 @@ connectDatabase();
 // Serve frontend build in production
 if (process.env.NODE_ENV === 'production') {
     const __dirnamePath = path.resolve();
-    app.use(express.static(path.join(__dirnamePath, '../frontend/build')));
+    app.use(express.static(path.join(__dirnamePath, 'frontend/build')));
   
     app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirnamePath, '../frontend/build/index.html'));
+      res.sendFile(path.resolve(__dirnamePath, 'frontend/build/index.html'));
     });
   }
-
+  
 const server = app.listen(process.env.PORT,()=>{
     console.log(`My Server listening to the port: ${process.env.PORT} in  ${process.env.NODE_ENV} `)
 })
