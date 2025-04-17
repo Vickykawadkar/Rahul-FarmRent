@@ -30,7 +30,7 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Get in Touch
+          GET IN TOUCH
         </motion.h2>
 
         <div className="row">
