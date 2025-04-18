@@ -25,7 +25,7 @@ export default function Contact() {
       <section className="container my-5">
         <motion.h2
           className="text-center mb-4 fw-bold"
-          style={{ color: '#f0590e' }}
+          style={{ color: '#59ED3B' }}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -57,11 +57,11 @@ export default function Contact() {
                       required
                       placeholder={`Enter your ${field}`}
                       style={{
-                        borderColor: "#f0590e",
+                        borderColor: "#59ED3B",
                         borderRadius: "10px",
                         transition: "0.3s"
                       }}
-                      onFocus={(e) => e.target.style.boxShadow = "0 0 6px #f0590e66"}
+                      onFocus={(e) => e.target.style.boxShadow = "0 0 6px #59ED3B66"}
                       onBlur={(e) => e.target.style.boxShadow = "none"}
                     />
                   ) : (
@@ -74,11 +74,11 @@ export default function Contact() {
                       required
                       placeholder="Your message here..."
                       style={{
-                        borderColor: "#f0590e",
+                        borderColor: "#59ED3B",
                         borderRadius: "10px",
                         transition: "0.3s"
                       }}
-                      onFocus={(e) => e.target.style.boxShadow = "0 0 6px #f0590e66"}
+                      onFocus={(e) => e.target.style.boxShadow = "0 0 6px #59ED3B66"}
                       onBlur={(e) => e.target.style.boxShadow = "none"}
                     />
                   )}
@@ -89,7 +89,7 @@ export default function Contact() {
                 type="submit"
                 className="btn mt-4 px-4 py-2"
                 style={{
-                  backgroundColor: "#f0590e",
+                  backgroundColor: "#59ED3B",
                   color: "#fff",
                   fontWeight: "600",
                   borderRadius: "30px",

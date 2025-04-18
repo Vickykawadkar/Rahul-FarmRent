@@ -13,7 +13,7 @@ export default function About() {
           style={{
             fontSize: '3rem',
             fontWeight: '800',
-            color: '#f0590e',
+            color: '#59ED3B',
             textTransform: 'uppercase',
             letterSpacing: '1px',
           }}
@@ -39,7 +39,7 @@ export default function About() {
   style={{
     fontSize: '2.2rem', 
     fontWeight: '700', 
-    color: '#f0590e', 
+    color: '#59ED3B', 
     letterSpacing: '1px', 
     textTransform: 'uppercase',
     textShadow: '2px 2px 6px rgba(0, 0, 0, 0.1)',
@@ -61,7 +61,7 @@ export default function About() {
     letterSpacing: '0.5px'
   }}
 >
-  At <span style={{ fontWeight: '700', fontSize: '1.2rem' }}>KrishiRent</span>, our mission is to provide farmers and agricultural businesses with access to <span style={{ fontWeight: '700', color: '#f0590e' }}>high-quality</span> and <span style={{ fontWeight: '700', color: '#f0590e' }}>affordable</span> equipment for rent. We aim to bridge the gap between <span style={{ fontWeight: '700', color: '#f0590e' }}>advanced technology</span> and small to medium-scale agricultural practices, empowering farmers to maximize productivity without the burden of large upfront investments.
+  At <span style={{ fontWeight: '700', fontSize: '1.2rem' }}>KrishiRent</span>, our mission is to provide farmers and agricultural businesses with access to <span style={{ fontWeight: '700', color: '#59ED3B' }}>high-quality</span> and <span style={{ fontWeight: '700', color: '#59ED3B' }}>affordable</span> equipment for rent. We aim to bridge the gap between <span style={{ fontWeight: '700', color: '#59ED3B' }}>advanced technology</span> and small to medium-scale agricultural practices, empowering farmers to maximize productivity without the burden of large upfront investments.
 </motion.p>
 
 <motion.h4
@@ -71,7 +71,7 @@ export default function About() {
   style={{
     fontSize: '2.2rem', 
     fontWeight: '700', 
-    color: '#f0590e', 
+    color: '#59ED3B', 
     letterSpacing: '1px', 
     textTransform: 'uppercase',
     textShadow: '2px 2px 6px rgba(0, 0, 0, 0.1)',
@@ -93,7 +93,7 @@ export default function About() {
     letterSpacing: '0.5px'
   }}
 >
-  We envision a future where farmers across India have easy access to the best agricultural equipment, enabling them to grow their businesses and contribute to <span style={{ fontWeight: '700', color: '#f0590e', fontSize: '1.2rem' }}>food security</span> and <span style={{ fontWeight: '700', color: '#f0590e', fontSize: '1.2rem' }}>sustainable farming practices</span>.
+  We envision a future where farmers across India have easy access to the best agricultural equipment, enabling them to grow their businesses and contribute to <span style={{ fontWeight: '700', color: '#59ED3B', fontSize: '1.2rem' }}>food security</span> and <span style={{ fontWeight: '700', color: '#59ED3B', fontSize: '1.2rem' }}>sustainable farming practices</span>.
 </motion.p>
 
 <motion.h4
@@ -103,7 +103,7 @@ export default function About() {
   style={{
     fontSize: '2.2rem', 
     fontWeight: '700', 
-    color: '#f0590e', 
+    color: '#59ED3B', 
     letterSpacing: '1px', 
     textTransform: 'uppercase',
     textShadow: '2px 2px 6px rgba(0, 0, 0, 0.1)',
@@ -133,7 +133,7 @@ export default function About() {
     transition={{ duration: 0.6, delay: 0.3 }}
     style={{ marginBottom: '15px' }}
   >
-    <span style={{ fontWeight: '700', fontSize: '1.2rem', color: '#f0590e' }}>
+    <span style={{ fontWeight: '700', fontSize: '1.2rem', color: '#59ED3B' }}>
       Customer-Centric:
     </span> We put farmers' needs at the heart of our services.
   </motion.li>
@@ -144,7 +144,7 @@ export default function About() {
     transition={{ duration: 0.6, delay: 0.4 }}
     style={{ marginBottom: '15px' }}
   >
-    <span style={{ fontWeight: '700', fontSize: '1.2rem', color: '#f0590e' }}>
+    <span style={{ fontWeight: '700', fontSize: '1.2rem', color: '#59ED3B' }}>
       Sustainability:
     </span> We are committed to promoting environmentally friendly farming solutions.
   </motion.li>
@@ -155,7 +155,7 @@ export default function About() {
     transition={{ duration: 0.6, delay: 0.5 }}
     style={{ marginBottom: '15px' }}
   >
-    <span style={{ fontWeight: '700', fontSize: '1.2rem', color: '#f0590e' }}>
+    <span style={{ fontWeight: '700', fontSize: '1.2rem', color: '#59ED3B' }}>
       Innovation:
     </span> We strive to bring cutting-edge agricultural technologies to farmers.
   </motion.li>
@@ -166,7 +166,7 @@ export default function About() {
     transition={{ duration: 0.6, delay: 0.6 }}
     style={{ marginBottom: '15px' }}
   >
-    <span style={{ fontWeight: '700', fontSize: '1.2rem', color: '#f0590e' }}>
+    <span style={{ fontWeight: '700', fontSize: '1.2rem', color: '#59ED3B' }}>
       Integrity:
     </span> We believe in transparent, fair business practices.
   </motion.li>
@@ -188,7 +188,7 @@ export default function About() {
   style={{
     fontSize: '2.5rem', 
     fontWeight: '700', 
-    color: '#f0590e', 
+    color: '#59ED3B', 
     textTransform: 'uppercase',
     letterSpacing: '1px', 
     textShadow: '2px 2px 6px rgba(0, 0, 0, 0.1)',
@@ -211,7 +211,7 @@ export default function About() {
     marginBottom: '20px',
   }}
 >
-  Our dedicated team of professionals comes from diverse backgrounds, united by a common passion for <span style={{ fontWeight: '700', color: '#f0590e', fontSize: '1.3rem' }}>empowering the agricultural community</span>. From engineers to customer service experts, we all work together to provide exceptional service and support to our customers.
+  Our dedicated team of professionals comes from diverse backgrounds, united by a common passion for <span style={{ fontWeight: '700', color: '#59ED3B', fontSize: '1.3rem' }}>empowering the agricultural community</span>. From engineers to customer service experts, we all work together to provide exceptional service and support to our customers.
 </motion.p>
 
 
@@ -242,7 +242,7 @@ export default function About() {
     style={{
       fontSize: '1.8rem',
       fontWeight: '700',
-      color: '#f0590e',
+      color: '#59ED3B',
       textTransform: 'uppercase',
       letterSpacing: '1px',
       marginBottom: '10px',
@@ -291,7 +291,7 @@ export default function About() {
     style={{
       fontSize: '1.8rem',
       fontWeight: '700',
-      color: '#f0590e',
+      color: '#59ED3B',
       textTransform: 'uppercase',
       letterSpacing: '1px',
       marginBottom: '10px',
@@ -340,7 +340,7 @@ export default function About() {
     style={{
       fontSize: '1.8rem',
       fontWeight: '700',
-      color: '#f0590e',
+      color: '#59ED3B',
       textTransform: 'uppercase',
       letterSpacing: '1px',
       marginBottom: '10px',

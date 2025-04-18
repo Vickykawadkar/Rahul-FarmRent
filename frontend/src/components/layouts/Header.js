@@ -16,7 +16,7 @@ export default function Header() {
   };
 
   return (
-    <nav className="navbar row align-items-center px-3" style={{ backgroundColor: '#232f3e' }}>
+    <nav className="navbar row align-items-center px-3" style={{ backgroundColor: '#59ED3B' }}>
       {/* Left: Logo + Nav Links */}
       <div className="col-12 col-md-5 d-flex align-items-center">
         <div className="navbar-brand mr-4">
@@ -104,7 +104,7 @@ export default function Header() {
           bottom: 0;
           height: 2px;
           width: 0;
-          background-color: #f3b700;
+          background-color: #59ED3B;
           transition: width 0.3s ease;
         }
 
@@ -113,7 +113,7 @@ export default function Header() {
         }
 
         .nav-animate-link:hover {
-          color: #f3b700 !important;
+          color: #59ED3B !important;
         }
       `}</style>
     </nav>

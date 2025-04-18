@@ -86,13 +86,13 @@ export default function Home() {
         letterSpacing: '-1px',
         fontFamily: '"Poppins", sans-serif',
         fontWeight: '700',
-        color: '#232f3e',
+        color: '#1B1B1B',
       }}
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
     >
-      Welcome to <span style={{ color: '#f0590e', fontWeight: '700' }}>KrishiRent</span>
+      Welcome to <span style={{ color: '#4CAF50', fontWeight: '700' }}>KrishiRent</span>
     </motion.h1>
 
     <motion.p
@@ -101,7 +101,7 @@ export default function Home() {
         fontSize: '1.3rem',
         fontWeight: '300',
         fontFamily: '"Roboto", sans-serif',
-        color: '#232f3e',
+        color: '#1B1B1B',
       }}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@ export default function Home() {
         }}
         whileHover={{
           scale: 1.1,
-          backgroundColor: '#f3b700',
+          backgroundColor: '#4CAF50',
           transition: { duration: 0.3 },
         }}
         whileTap={{
@@ -154,7 +154,7 @@ export default function Home() {
       fontFamily: '"Poppins", sans-serif',
       position: 'relative',
       display: 'inline-block',
-      color: '#232f3e',
+      color: '#4CAF50',
     }}
     initial={{ opacity: 0, y: -30 }}
     animate={{ opacity: 1, y: 0 }}
@@ -167,7 +167,7 @@ export default function Home() {
       transition={{ duration: 0.8, delay: 0.3 }}
       style={{
         height: '4px',
-        backgroundColor: '#232f3e',
+        backgroundColor: '#1B1B1B',
         position: 'absolute',
         bottom: '-8px',
         left: 0,
@@ -200,7 +200,7 @@ export default function Home() {
         fontWeight: '800',
         fontFamily: '"Poppins", sans-serif',
         fontSize: '3rem',
-        color: '#232f3e',
+        color: '#4CAF50',
         letterSpacing: '1px',
         textTransform: 'uppercase',
       }}
@@ -242,16 +242,16 @@ export default function Home() {
             style={{
               border: '2px solid black',
               borderRadius: '10px',
-              backgroundColor: '#ffffff',
+              backgroundColor: '#EDF8E9',
               boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
               height: '100%',
             }}
           >
-            <i className={`${service.icon} fa-3x mb-3`} style={{ color: '#232f3e' }}></i>
+            <i className={`${service.icon} fa-3x mb-3`} style={{ color: '#EDF8E9' }}></i>
             <h5 style={{ fontWeight: '600', fontFamily: '"Poppins", sans-serif' }}>
               {service.title}
             </h5>
-            <p style={{ color: '#555', fontSize: '1rem' }}>{service.desc}</p>
+            <p style={{ color: '#EDF8E9', fontSize: '1rem' }}>{service.desc}</p>
           </motion.div>
         </motion.div>
       ))}
@@ -264,7 +264,7 @@ export default function Home() {
   style={{
     border: "2px solid black",
     borderRadius: "10px",
-    backgroundColor: "#f8f9fa",
+    backgroundColor: "#EDF8E9",
   }}
 >
   <motion.h2
@@ -272,7 +272,7 @@ export default function Home() {
       fontWeight: "800",
       fontSize: "3rem",
       fontFamily: '"Poppins", sans-serif',
-      color: "#232f3e",
+      color: "#4CAF50",
       textTransform: "uppercase",
       letterSpacing: "1px",
     }}
@@ -288,7 +288,7 @@ export default function Home() {
     style={{
       fontSize: "1.2rem",
       fontWeight: "500",
-      color: "#444",
+      color: "#4CAF50",
       fontFamily: '"Poppins", sans-serif',
       lineHeight: "1.7",
     }}
@@ -308,7 +308,7 @@ export default function Home() {
 <section
   className="bg-dark text-white py-5 mt-5"
   style={{
-    backgroundColor: "#232f3e", // Dark background
+    backgroundColor: "#EDF8E9", // Dark background
     borderTop: "2px solid black", // Border for the top edge
     borderRadius: "10px",
   }}
@@ -341,7 +341,7 @@ export default function Home() {
         fontSize: "1.1rem",
         fontWeight: "500",
         marginTop: "20px",
-        color: "#e0e0e0", // Light gray for better readability
+        color: "#EDF8E9", // Light gray for better readability
       }}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -350,7 +350,7 @@ export default function Home() {
       Email:{" "}
       <motion.span
         style={{
-          color: "#ff8c00", // Highlight the email with a distinct color
+          color: "4CAF50", // Highlight the email with a distinct color
           fontWeight: "600",
         }}
         initial={{ opacity: 0 }}
@@ -375,7 +375,7 @@ export default function Home() {
       Phone:{" "}
       <motion.span
         style={{
-          color: "#ff8c00", // Highlight the phone number with a distinct color
+          color: "#4CAF50", // Highlight the phone number with a distinct color
           fontWeight: "600",
         }}
         initial={{ opacity: 0 }}
@@ -391,7 +391,7 @@ export default function Home() {
         fontSize: "1.1rem",
         fontWeight: "500",
         marginTop: "10px",
-        color: "#e0e0e0", // Light gray for readability
+        color: "#EDF8E9", // Light gray for readability
       }}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
