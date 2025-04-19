@@ -108,14 +108,8 @@ export default function ProductDetail () {
 
                     <hr/>
 
-                    <p id="product_price">${product.price}</p>
-                    <div className="stockCounter d-inline">
-                        <span className="btn btn-danger minus" onClick={decreaseQty} >-</span>
-
-                        <input type="number" className="form-control count d-inline" value={quantity} readOnly />
-
-                        <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
-                    </div>
+                    <p id="product_price">₹{product.price}/per hr</p>
+                    
                     <button type="button" id="cart_btn" 
                      disabled={product.stock==0?true:false} 
                      onClick={()=>{
