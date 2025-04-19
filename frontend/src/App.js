@@ -3,6 +3,7 @@ import Home from './components/Home';
 import ProductsPage from './components/Products';
 import Contact from './components/Contact';
 import About from './components/About';
+import Workflow from './components/Workflow';
 import Footer from './components/layouts/Footer';
 import Header from './components/layouts/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
@@ -65,6 +66,7 @@ function App() {
                       <Route path='/productspage' element={<ProductsPage/>} />
                       <Route path='/contact' element={<Contact/>} />
                       <Route path='/about' element={<About/>} />
+                      <Route path='/workflow' element={<Workflow/>} />
                       <Route path='/search/:keyword' element={<ProductSearch/>} />
                       <Route path='/product/:id' element={<ProductDetail/>} />
                       <Route path='/login' element={<Login/>} />

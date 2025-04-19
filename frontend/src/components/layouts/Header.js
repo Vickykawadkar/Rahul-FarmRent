@@ -31,6 +31,7 @@ export default function Header() {
             { to: '/productspage', label: 'PRODUCTS' },
             { to: '/contact', label: 'CONTACT' },
             { to: '/about', label: 'ABOUT' },
+            { to: '/workflow', label: 'WORKFLOW' },
           ].map((link, idx) => (
             <li className="nav-item mx-2" key={idx}>
               <Link
