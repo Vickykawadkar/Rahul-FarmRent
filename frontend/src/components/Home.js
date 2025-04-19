@@ -48,16 +48,20 @@ export default function Home() {
   transition={{ duration: 1.5, ease: 'easeOut' }}
   style={{
     marginTop: '80px',
-    backgroundColor: '#ffffff',
-    color: '#ffffff',
     minHeight: '40vh',
     position: 'relative',
     overflow: 'hidden',
     width: '100%',
-    border: '2px solid #000000', // Border width reduced
+    border: '2px solid #000000',
     borderRadius: '12px',
+    backgroundImage: 'url("/images/back.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    color: '#ffffff',
   }}
 >
+
   {/* Background Overlay */}
   <div
     style={{
