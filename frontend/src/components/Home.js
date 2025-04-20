@@ -306,14 +306,13 @@ export default function Home() {
   </motion.p>
 </section>
 
-          {/* Contact Section */}
-          
 
+{/* Contact Section */}
 <section
-  className="bg-dark text-white py-5 mt-5"
+  className="py-5 mt-5"
   style={{
-    backgroundColor: "#EDF8E9", // Dark background
-    borderTop: "2px solid black", // Border for the top edge
+    backgroundColor: "#EDF8E9",
+    border: "2px solid black", // Black border on all sides
     borderRadius: "10px",
   }}
 >
@@ -327,10 +326,12 @@ export default function Home() {
         letterSpacing: "1px",
         display: "inline-block",
         padding: "10px 20px",
-        border: "2px solid white", // Border for the header
+        border: "2px solid #4CAF50",
         borderRadius: "5px",
-        marginBottom: "30px", // Adding margin for spacing
+        marginBottom: "30px",
         textTransform: "uppercase",
+        color: "#2c2c2c",
+        backgroundColor: "#ffffff", // White background for Contact Us
       }}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -345,7 +346,7 @@ export default function Home() {
         fontSize: "1.1rem",
         fontWeight: "500",
         marginTop: "20px",
-        color: "#EDF8E9", // Light gray for better readability
+        color: "#2c2c2c",
       }}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -354,7 +355,7 @@ export default function Home() {
       Email:{" "}
       <motion.span
         style={{
-          color: "4CAF50", // Highlight the email with a distinct color
+          color: "#4CAF50",
           fontWeight: "600",
         }}
         initial={{ opacity: 0 }}
@@ -370,7 +371,7 @@ export default function Home() {
         fontSize: "1.1rem",
         fontWeight: "500",
         marginTop: "10px",
-        color: "#e0e0e0", // Light gray for readability
+        color: "#2c2c2c",
       }}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -379,7 +380,7 @@ export default function Home() {
       Phone:{" "}
       <motion.span
         style={{
-          color: "#4CAF50", // Highlight the phone number with a distinct color
+          color: "#4CAF50",
           fontWeight: "600",
         }}
         initial={{ opacity: 0 }}
@@ -395,16 +396,18 @@ export default function Home() {
         fontSize: "1.1rem",
         fontWeight: "500",
         marginTop: "10px",
-        color: "#EDF8E9", // Light gray for readability
       }}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.9 }}
     >
-      Location: AgriTech Hub, Pune, India
+      <span style={{ color: "#2c2c2c" }}>Location:</span>{" "}
+      <span style={{ color: "#4CAF50" }}>AgriTech Hub, Pune, India</span>
     </motion.p>
   </div>
 </section>
+
+
 
        
           
