@@ -16,12 +16,23 @@ export default function Header() {
   };
 
   return (
-    <nav className="navbar row align-items-center px-3" style={{ backgroundColor: '#59ED3B' }}>
+    <nav
+      className="navbar row align-items-center px-3 shadow-sm"
+      style={{
+        background: "linear-gradient(90deg, #EDF8E9 0%, #4CAF50 100%)",
+        backdropFilter: "blur(6px)",
+        WebkitBackdropFilter: "blur(6px)",
+        borderBottom: "2px solid rgba(0,0,0,0.05)",
+        zIndex: 1000,
+        position: "sticky",
+        top: 0,
+      }}
+    >
       {/* Left: Logo + Nav Links */}
       <div className="col-12 col-md-5 d-flex align-items-center">
         <div className="navbar-brand mr-4">
           <Link to="/">
-            <img width="130px" alt="Logo" src="/images/logo6.png" />
+            <img width="130px" alt="Logo" src="/images/logo14.png" />
           </Link>
         </div>
 
@@ -38,10 +49,11 @@ export default function Header() {
                 className="nav-link nav-animate-link p-0"
                 to={link.to}
                 style={{
-                  color: '#ffffff',
+                  color: '#000000',
                   fontWeight: '600',
                   position: 'relative',
                   paddingBottom: '4px',
+                  fontSize: '0.95rem',
                   transition: 'color 0.3s ease',
                 }}
               >
@@ -63,11 +75,17 @@ export default function Header() {
       <div className="col-12 col-md-3 mt-3 mt-md-0 text-center text-md-right">
         {isAuthenticated ? (
           <Dropdown className='d-inline'>
-            <Dropdown.Toggle variant='default text-white pr-3' id='dropdown-basic'>
-              <figure className='avatar avatar-nav'>
-                <Image width="40px" src={user.avatar ?? './images/default_avatar.png'} />
+            <Dropdown.Toggle variant='default text-dark pr-3' id='dropdown-basic'>
+              <figure className='avatar avatar-nav d-inline-block mb-0 mr-2'>
+                <Image
+                  width="38px"
+                  height="38px"
+                  roundedCircle
+                  src={user.avatar ?? './images/default_avatar.png'}
+                  alt="User Avatar"
+                />
               </figure>
-              <span>{user.name}</span>
+              <span style={{ fontWeight: "600" }}>{user.name}</span>
             </Dropdown.Toggle>
             <Dropdown.Menu>
               {user.role === 'admin' && (
@@ -83,23 +101,24 @@ export default function Header() {
                   Orders
                 </Dropdown.Item>
               )}
-
               <Dropdown.Item onClick={logoutHandler} className='text-danger'>
                 Logout
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         ) : (
-          <Link to="/login" className="btn" id="login_btn">Login</Link>
+          <Link to="/login" className="btn btn-outline-dark font-weight-bold px-3 py-1" id="login_btn">
+            Login
+          </Link>
         )}
 
-        <Link to="/cart">
-          <span id="cart" className="ml-3 text-white">Cart</span>
+        <Link to="/cart" className="ml-3">
+          <span id="cart" className="text-dark font-weight-bold">Cart</span>
         </Link>
-        <span className="ml-1 text-white" id="cart_count">{cartItems.length}</span>
+        <span className="ml-1 text-dark" id="cart_count">{cartItems.length}</span>
       </div>
 
-      {/* Custom Style for Animation */}
+      {/* Custom Styles */}
       <style>{`
         .nav-animate-link::after {
           content: '';
@@ -108,7 +127,7 @@ export default function Header() {
           bottom: 0;
           height: 2px;
           width: 0;
-          background-color: #59ED3B;
+          background-color: #000;
           transition: width 0.3s ease;
         }
 
@@ -117,7 +136,13 @@ export default function Header() {
         }
 
         .nav-animate-link:hover {
-          color: #59ED3B !important;
+          color: #4CAF50 !important;
+        }
+
+        #login_btn:hover {
+          background-color: #4CAF50;
+          color: white;
+          border-color: #4CAF50;
         }
       `}</style>
     </nav>
