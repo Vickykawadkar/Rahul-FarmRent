@@ -16,7 +16,7 @@ export  default function ProductSearch(){
     const dispatch = useDispatch();
     const {products, loading, error, productsCount, resPerPage} =    useSelector((state) => state.productsState)
     const [currentPage, setCurrentPage] = useState(1);
-    const [price, setPrice] = useState([1,1000]);
+    const [price, setPrice] = useState([800,5000]);
     const [priceChanged, setPriceChanged] = useState(price);
     const [category, setCategory] = useState(null);
     const [rating, setRating] = useState(0);
@@ -61,12 +61,12 @@ export  default function ProductSearch(){
                                         range={true}
                                         marks = {
                                              {
-                                                1: "₹1",
-                                                1000: "₹1000"
+                                                800: "₹800",
+                                                5000: "₹5000"
                                              }   
                                         }
-                                        min={1}
-                                        max={1000}
+                                        min={800}
+                                        max={5000}
                                         defaultValue={price}
                                         onChange={(price)=>{
                                             setPrice(price)
@@ -74,7 +74,7 @@ export  default function ProductSearch(){
                                         handleRender={
                                             renderProps => {
                                                 return (
-                                                    <Tooltip  overlay={`$${renderProps.props['aria-valuenow']}`}  >
+                                                    <Tooltip  overlay={`₹${renderProps.props['aria-valuenow']}`}  >
                                                          <div {...renderProps.props}>  </div>
                                                     </Tooltip>
                                                 )
