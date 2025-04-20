@@ -306,7 +306,6 @@ export default function Home() {
   </motion.p>
 </section>
 
-
 {/* Contact Section */}
 <section
   className="py-5 mt-5"
@@ -326,11 +325,11 @@ export default function Home() {
         letterSpacing: "1px",
         display: "inline-block",
         padding: "10px 20px",
-        border: "2px solid #4CAF50",
+        border: "2px solid black",  // Change border color to black
         borderRadius: "5px",
         marginBottom: "30px",
         textTransform: "uppercase",
-        color: "#2c2c2c",
+        color: "#4CAF50",  // Green color for Contact Us text
         backgroundColor: "#ffffff", // White background for Contact Us
       }}
       initial={{ opacity: 0, scale: 0.8 }}
@@ -406,6 +405,7 @@ export default function Home() {
     </motion.p>
   </div>
 </section>
+
 
 
 
