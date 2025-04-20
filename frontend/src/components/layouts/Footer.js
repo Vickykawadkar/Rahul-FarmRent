@@ -1,9 +1,11 @@
-export  default function Footer (){
+export default function Footer() {
+    const year = new Date().getFullYear();
+
     return (
-        <footer className="py-1">
-            <p className="text-center text-dark mt-1">
-                KRISHIRENT - 2024-2025, All Rights Reserved
+        <footer className="py-3 bg-light border-top">
+            <p className="text-center text-muted mb-0">
+                &copy; {year} <strong>KRISHIRENT</strong>. All Rights Reserved.
             </p>
         </footer>
-    )
+    );
 }
