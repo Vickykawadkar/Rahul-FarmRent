@@ -108,8 +108,17 @@ export default function ProductDetail () {
 
                     <hr/>
 
-                    <p id="product_price">₹{product.price}/per hr</p>
-                    
+                    <p id="product_price">₹{product.price} / per hour</p>
+<div className="stockCounter d-inline align-items-center">
+    <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
+
+    <input type="number" className="form-control count d-inline mx-2" value={quantity} readOnly />
+
+    <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
+
+    <span className="ml-2">{quantity > 1 ? 'hours' : 'hour'}</span>
+</div>
+
                     <button type="button" id="cart_btn" 
                      disabled={product.stock==0?true:false} 
                      onClick={()=>{
