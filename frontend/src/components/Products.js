@@ -7,14 +7,24 @@ import Product from "./product/Product";
 import { toast } from 'react-toastify';
 import Pagination from 'react-js-pagination';
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductsPage() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { products, loading, error, productsCount, resPerPage } = useSelector((state) => state.productsState);
   const [currentPage, setCurrentPage] = useState(1);
 
   const setCurrentPageNo = (pageNo) => {
     setCurrentPage(pageNo);
+  };
+
+  const handleCategoryChange = (e) => {
+    const selectedCategory = e.target.value;
+    if (selectedCategory !== "") {
+      const encodedCategory = encodeURIComponent(selectedCategory);
+      navigate(`/search/${encodedCategory}`);
+    }
   };
 
   useEffect(() => {
@@ -31,41 +41,89 @@ export default function ProductsPage() {
       {loading ? <Loader /> :
         <Fragment>
           <MetaData title={'Buy Best Products'} />
+          
+          {/* Header */}
           <motion.h1
             id="products_heading"
             style={{
-              color: '#4CAF50',
-              fontSize: '2.5rem',
-              fontWeight: '700',
+              color: '#2e7d32',
+              fontSize: '3rem',
+              fontWeight: '800',
               fontFamily: '"Poppins", sans-serif',
-              letterSpacing: '1px',
-              textTransform: 'uppercase',
               textAlign: 'center',
-              marginTop: '2rem',
-              marginBottom: '2rem',
+              margin: '2rem 0 1rem',
+              letterSpacing: '1.5px',
+              textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
             }}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            Latest Products
+            🚜 Explore Our Latest Products
           </motion.h1>
 
-          <section id="products" className="container mt-5">
+          {/* Category Dropdown */}
+          <motion.div
+            className="container mb-5"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="row justify-content-center">
+              <div className="col-md-6">
+                <select
+                  className="form-select p-3 rounded-4 shadow-sm"
+                  onChange={handleCategoryChange}
+                  defaultValue=""
+                  style={{
+                    fontSize: '1rem',
+                    fontWeight: '500',
+                    fontFamily: '"Poppins", sans-serif',
+                    backgroundColor: '#f9f9f9',
+                    border: '1px solid #ddd',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <option value="" disabled>🔍 Select a Category</option>
+                  <option value="Tractor">🚜 Tractor</option>
+                  <option value="Equipment">🛠 Equipment</option>
+                  <option value="Horticulture & Gardening Tools">🌿 Horticulture & Gardening Tools</option>
+                  <option value="Special Equipment">⚙️ Special Equipment</option>
+                </select>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Products Section */}
+          <section id="products" className="container">
             <motion.div
-              className="row"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              className="row g-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
             >
               {products && products.map(product => (
-                <Product col={4} key={product._id} product={product} />
+                <motion.div
+                  key={product._id}
+                  className="col-md-4"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: 'spring', stiffness: 200 }}
+                >
+                  <Product col={12} product={product} />
+                </motion.div>
               ))}
             </motion.div>
           </section>
 
-          {productsCount > 0 && productsCount > resPerPage ?
-            <div className="d-flex justify-content-center mt-5">
+          {/* Pagination */}
+          {productsCount > 0 && productsCount > resPerPage && (
+            <motion.div
+              className="d-flex justify-content-center mt-5"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <Pagination
                 activePage={currentPage}
                 onChange={setCurrentPageNo}
@@ -77,7 +135,8 @@ export default function ProductsPage() {
                 itemClass={'page-item'}
                 linkClass={'page-link'}
               />
-            </div> : null}
+            </motion.div>
+          )}
         </Fragment>
       }
     </Fragment>
