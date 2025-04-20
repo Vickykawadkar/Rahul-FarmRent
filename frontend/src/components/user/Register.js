@@ -33,15 +33,52 @@ export default function Register() {
         }
     }
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('name', userData.name)
-        formData.append('email', userData.email)
-        formData.append('password', userData.password)
-        formData.append('avatar', avatar);
-        dispatch(register(formData))
-    }
+    
+        const apiKey = process.env.APILAYER_API_KEY;
+        const email = userData.email;
+    
+        const myHeaders = new Headers();
+        myHeaders.append("apikey", apiKey);
+    
+        const requestOptions = {
+            method: 'GET',
+            redirect: 'follow',
+            headers: myHeaders
+        };
+    
+        try {
+            const response = await fetch(`https://api.apilayer.com/email_verification/check?email=${email}`, requestOptions);
+            const resultText = await response.text();
+            const result = JSON.parse(resultText);
+    
+            if (!result.format_valid || !result.smtp_check || result.disposable) {
+                toast("Invalid or temporary email. Please use a real email address.", {
+                    position: toast.POSITION.BOTTOM_CENTER,
+                    type: 'error'
+                });
+                return;
+            }
+    
+            // Email is valid - proceed with registration
+            const formData = new FormData();
+            formData.append('name', userData.name);
+            formData.append('email', userData.email);
+            formData.append('password', userData.password);
+            formData.append('avatar', avatar);
+            dispatch(register(formData));
+    
+        } catch (error) {
+            toast("Email validation failed. Try again later.", {
+                position: toast.POSITION.BOTTOM_CENTER,
+                type: 'error'
+            });
+            console.error('Email verification error:', error);
+        }
+    };
+    
+    
 
     useEffect(()=>{
         if(isAuthenticated) {
