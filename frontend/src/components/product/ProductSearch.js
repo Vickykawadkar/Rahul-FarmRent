@@ -61,8 +61,8 @@ export  default function ProductSearch(){
                                         range={true}
                                         marks = {
                                              {
-                                                1: "$1",
-                                                1000: "$1000"
+                                                1: "₹1",
+                                                1000: "₹1000"
                                              }   
                                         }
                                         min={1}
@@ -83,28 +83,7 @@ export  default function ProductSearch(){
                                     />
                                 </div>
                                 <hr className="my-5" />        
-                                {/* Category Filter */}
-                                <div className="mt-5">
-                                     <h3 className="mb-3">Categories</h3> 
-                                       <ul className="pl-0">
-                                        {categories.map(category =>
-                                             <li
-                                             style={{
-                                                 cursor:"pointer",
-                                                 listStyleType: "none"
-                                             }}
-                                             key={category}
-                                             onClick={()=>{
-                                                setCategory(category)
-                                             }}
-                                             >
-                                                 {category}
-                                             </li>
-                                            
-                                            )}
-                                           
-                                       </ul>
-                                </div>
+                               
                                 <hr className="my-5" /> 
                                 {/* Ratings Filter */}
                                 <div className="mt-5">
