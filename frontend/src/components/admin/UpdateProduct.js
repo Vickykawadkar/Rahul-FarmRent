@@ -177,7 +177,10 @@ export default function UpdateProduct () {
                                 type="number"
                                 id="stock_field"
                                 className="form-control"
-                                onChange={e => setStock(e.target.value)}
+                                onChange={e => {
+                                    const value = Math.max(0, Number(e.target.value));
+                                    setStock(value);
+                                }}
                                 value={stock}
                                 />
                             </div>
