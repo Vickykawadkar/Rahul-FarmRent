@@ -81,7 +81,12 @@ exports.updateOrder =  catchAsyncError(async (req, res, next) => {
     }
     //Updating the product stock of each order item
     order.orderItems.forEach(async orderItem => {
-        await updateStock(orderItem.product, orderItem.quantity)
+        if(order.orderStatus == 'Shipped') {
+            await updateStock2(orderItem.product, orderItem.quantity)
+        }
+        else {
+            await updateStock(orderItem.product, orderItem.quantity)
+        }
     })
 
     order.orderStatus = req.body.orderStatus;
@@ -97,6 +102,12 @@ exports.updateOrder =  catchAsyncError(async (req, res, next) => {
 async function updateStock (productId, quantity){
     const product = await Product.findById(productId);
     product.stock = product.stock - quantity;
+    product.save({validateBeforeSave: false})
+}
+
+async function updateStock2 (productId, quantity){
+    const product = await Product.findById(productId);
+    product.stock = product.stock + quantity;
     product.save({validateBeforeSave: false})
 }
 
