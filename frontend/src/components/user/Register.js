@@ -36,7 +36,7 @@ export default function Register() {
     const submitHandler = async (e) => {
         e.preventDefault();
     
-        const apiKey = process.env.APILAYER_API_KEY;
+        const apiKey = "VTqjuqLnUUSr3ImJpB4a73NsUF9BG4Un";
         const email = userData.email;
     
         const myHeaders = new Headers();
@@ -52,6 +52,8 @@ export default function Register() {
             const response = await fetch(`https://api.apilayer.com/email_verification/check?email=${email}`, requestOptions);
             const resultText = await response.text();
             const result = JSON.parse(resultText);
+
+            console.log(result);
     
             if (!result.format_valid || !result.smtp_check || result.disposable) {
                 toast("Invalid or temporary email. Please use a real email address.", {

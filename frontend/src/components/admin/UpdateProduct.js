@@ -11,12 +11,15 @@ export default function UpdateProduct () {
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
-    const [stock, setStock] = useState(0);
+    // const [stock, setStock] = useState(0);
     const [seller, setSeller] = useState("");
     const [images, setImages] = useState([]);
     const [imagesCleared, setImagesCleared] = useState(false);
     const [imagesPreview, setImagesPreview] = useState([]);
     const { id:productId } = useParams();
+
+    const [stock, setStock] = useState(10); // or any default value you need
+
     
     const { loading, isProductUpdated, error, product } = useSelector( state => state.productState)
 
@@ -171,19 +174,12 @@ export default function UpdateProduct () {
                                     ))}
                                 </select>
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="stock_field">Stock</label>
-                                <input
-                                type="number"
+                            <input
+                                type="hidden"
                                 id="stock_field"
-                                className="form-control"
-                                onChange={e => {
-                                    const value = Math.max(0, Number(e.target.value));
-                                    setStock(value);
-                                }}
                                 value={stock}
-                                />
-                            </div>
+                            />
+
 
                             <div className="form-group">
                                 <label htmlFor="seller_field">Seller Name</label>

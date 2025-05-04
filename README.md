@@ -1,4 +1,4 @@
-# JVL cart
+# Krishirent 
 
 an E-commerce Website built with MERN stack.
 
@@ -18,7 +18,7 @@ after that open the backend/config/config.env
 and update the MongoDB connection string
 ```bash
 ...
-DB_LOCAL_URI=mongodb://localhost:27017/jvlcart
+DB_LOCAL_URI=mongodb://localhost:27017/Krishirent
 ```
 
 navigate back to "root" folder and run this command for loading demo data
@@ -36,7 +36,7 @@ npm run prod
 open the http://localhost:8000 and test the 
 
 ## Postman Collection
-https://www.postman.com/jvlcode/workspace/nodejs-ecommerce/collection/19530322-997cf450-820a-4852-bc1f-a93c9072d6ec?action=share&creator=19530322
+https://www.postman.com/Krishirentcode/workspace/nodejs-ecommerce/collection/19530322-997cf450-820a-4852-bc1f-a93c9072d6ec?action=share&creator=19530322
 
 
 ## License

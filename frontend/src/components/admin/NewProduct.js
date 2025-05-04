@@ -11,10 +11,13 @@ export  default function NewProduct () {
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
-    const [stock, setStock] = useState(0);
+    // const [stock, setStock] = useState(0);
     const [seller, setSeller] = useState("");
     const [images, setImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([]);
+
+     const [stock, setStock] = useState(10); // or any default value you need
+    
     
     const { loading, isProductCreated, error } = useSelector( state => state.productState)
 
@@ -140,16 +143,11 @@ export  default function NewProduct () {
                                     ))}
                                 </select>
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="stock_field">Stock</label>
-                                <input
-                                type="number"
+                            <input
+                                type="hidden"
                                 id="stock_field"
-                                className="form-control"
-                                onChange={e => setStock(e.target.value)}
                                 value={stock}
-                                />
-                            </div>
+                            />
 
                             <div className="form-group">
                                 <label htmlFor="seller_field">Seller Name</label>
