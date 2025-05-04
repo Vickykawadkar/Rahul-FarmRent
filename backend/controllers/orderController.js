@@ -76,12 +76,12 @@ exports.orders = catchAsyncError(async (req, res, next) => {
 exports.updateOrder =  catchAsyncError(async (req, res, next) => {
     const order = await Order.findById(req.params.id);
 
-    if(order.orderStatus == 'Delivered') {
-        return next(new ErrorHandler('Order has been already delivered!', 400))
+    if(order.orderStatus == 'Returned') {
+        return next(new ErrorHandler('Order has been already Returned!', 400))
     }
     //Updating the product stock of each order item
     order.orderItems.forEach(async orderItem => {
-        if(order.orderStatus == 'Shipped') {
+        if(order.orderStatus == 'Delivered') {
             await updateStock2(orderItem.product, orderItem.quantity)
         }
         else {
@@ -90,7 +90,7 @@ exports.updateOrder =  catchAsyncError(async (req, res, next) => {
     })
 
     order.orderStatus = req.body.orderStatus;
-    order.deliveredAt = Date.now();
+    order.returnedAt = Date.now();
     await order.save();
 
     res.status(200).json({

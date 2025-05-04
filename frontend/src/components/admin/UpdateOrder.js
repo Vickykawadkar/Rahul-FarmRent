@@ -124,8 +124,8 @@ export default function UpdateOrder () {
                                 name="status"
                                 >
                                     <option value="Processing">Processing</option>
-                                    <option value="Shipped">Shipped</option>
                                     <option value="Delivered">Delivered</option>
+                                    <option value="Returned">Returned</option>
                                 </select>
                               
                             </div>
