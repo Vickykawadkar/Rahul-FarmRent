@@ -1,6 +1,6 @@
 # Krishirent 
 
-an E-commerce Website built with MERN stack.
+an Agri-Rental Website built with MERN stack.
 
 ## Instructions
 
@@ -35,8 +35,6 @@ npm run prod
 ## Test
 open the http://localhost:8000 and test the 
 
-## Postman Collection
-https://www.postman.com/Krishirentcode/workspace/nodejs-ecommerce/collection/19530322-997cf450-820a-4852-bc1f-a93c9072d6ec?action=share&creator=19530322
 
 
 ## License
