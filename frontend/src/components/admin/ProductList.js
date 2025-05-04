@@ -33,8 +33,8 @@ export default function ProductList() {
                     sort: 'asc'
                 },
                 {
-                    label: 'Stock',
-                    field: 'stock',
+                    label: 'Availability',
+                    field: 'availability',
                     sort: 'asc'
                 },
                 {
@@ -51,7 +51,7 @@ export default function ProductList() {
                 id: product._id,
                 name: product.name,
                 price : `₹${product.price}`,
-                stock: product.stock,
+                availability: product.availability ? "Available" : "Not Available",
                 actions: (
                     <Fragment>
                         <Link to={`/admin/product/${product._id}`} className="btn btn-primary"> <i className="fa fa-pencil"></i></Link>

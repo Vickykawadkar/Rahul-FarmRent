@@ -51,6 +51,11 @@ const productSchema = new mongoose.Schema({
         required: [true, "Please enter product stock"],
         maxLength: [20, 'Product stock cannot exceed 20']
     },
+    availability: {
+        type: Boolean,
+        required: true,
+        default: true // or false, based on your logic
+    },
     numOfReviews: {
         type: Number,
         default: 0

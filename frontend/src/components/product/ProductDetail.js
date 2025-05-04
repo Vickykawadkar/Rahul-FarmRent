@@ -120,7 +120,7 @@ export default function ProductDetail () {
 </div>
 
                     <button type="button" id="cart_btn" 
-                     disabled={product.stock==0?true:false} 
+                     disabled={product.availability?false:true} 
                      onClick={()=>{
                         dispatch(addCartItem(product._id, quantity))
                         toast('Cart Item Added!',{
@@ -133,7 +133,12 @@ export default function ProductDetail () {
 
                     <hr/>
 
-                    <p>Status: <span className={product.stock > 0 ?'greenColor':'redColor'} id="stock_status">{ product.stock > 0 ?'In Stock':'Out of Stock'}</span></p>
+                    <p>
+                        Status: 
+                        <span className={product.availability ? 'greenColor' : 'redColor'} id="stock_status">
+                            {product.availability ? 'Available' : 'Not Available'}
+                        </span>
+                        </p>
 
                     <hr/>
 
