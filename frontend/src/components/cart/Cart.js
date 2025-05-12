@@ -72,7 +72,7 @@ export default function Cart() {
                             <div id="order_summary">
                                 <h4>Order Summary</h4>
                                 <hr />
-                                <p>Subtotal:  <span className="order-summary-values">{items.reduce((acc, item)=>(acc + item.quantity), 0)} (Units)</span></p>
+                                <p>Subtotal:  <span className="order-summary-values">{items.reduce((acc, item)=>(acc + item.quantity), 0)} (Hours)</span></p>
                                 <p>Est. total: <span className="order-summary-values">
                                 ₹{items.reduce((acc, item)=>(acc + item.quantity * item.price), 0)}</span></p>
                 
