@@ -61,7 +61,7 @@ export default function Contact() {
 
               <p style={{ fontSize: "1.1rem", marginBottom: "25px" }}>
                 <span style={{ fontWeight: "600", color: "#4CAF50" }}>Address:</span>{" "}
-                AgriTech Park, Pune, Maharashtra, India
+                IT Park, Indore, Madhya pradesh, India
               </p>
 
               <motion.div

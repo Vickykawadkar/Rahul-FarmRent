@@ -42,6 +42,9 @@ import UpdateOrder from './components/admin/UpdateOrder';
 import UserList from './components/admin/UserList';
 import UpdateUser from './components/admin/UpdateUser';
 import ReviewList from './components/admin/ReviewList';
+import PrivacyPolicy from './components/layouts/PrivacyPolicy';
+ import Disclaimer from "./components/layouts/Disclaimer"; 
+ import TermsAndConditions from "./components/layouts/TermsAndConditions";
 
 function App() {
   const [stripeApiKey, setStripeApiKey] = useState("")
@@ -67,6 +70,9 @@ function App() {
                       <Route path='/contact' element={<Contact/>} />
                       <Route path='/about' element={<About/>} />
                       <Route path='/workflow' element={<Workflow/>} />
+                      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                        <Route path="/disclaimer" element={<Disclaimer />} />
+                        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                       <Route path='/search/:keyword' element={<ProductSearch/>} />
                       <Route path='/product/:id' element={<ProductDetail/>} />
                       <Route path='/login' element={<Login/>} />
